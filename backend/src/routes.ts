@@ -6,7 +6,7 @@ const users = [{
     id: 1,
     name: "Gustav",
     email: "gustavuwe.123@gmail.com",
-    password: "ggpranois123"
+    password: "teste123"
 }]
 
 dashboardRoutes.post("/", (req, res) => {
