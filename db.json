@@ -1,0 +1,60 @@
+{
+    "_default": {
+        "1": {
+            "conta": "PRACTICE",
+            "valor": "100",
+            "ativo": "EURUSD",
+            "tipo": "binarias",
+            "result": "WIN"
+        },
+        "2": {
+            "conta": "PRACTICE",
+            "valor": "100",
+            "ativo": "EURUSD",
+            "tipo": "binarias",
+            "result": "WIN"
+        },
+        "3": {
+            "conta": "PRACTICE",
+            "valor": "100",
+            "ativo": "EURUSD",
+            "tipo": "binarias",
+            "result": "WIN"
+        },
+        "4": {
+            "conta": "PRACTICE",
+            "valor": "100",
+            "ativo": "EURUSD",
+            "tipo": "binarias",
+            "result": "WIN"
+        },
+        "5": {
+            "conta": "PRACTICE",
+            "valor": "100",
+            "ativo": "EURUSD",
+            "tipo": "binarias",
+            "result": "WIN"
+        },
+        "6": {
+            "conta": "PRACTICE",
+            "valor": "100",
+            "ativo": "EURUSD",
+            "tipo": "binarias",
+            "result": "WIN"
+        },
+        "7": {
+            "conta": "PRACTICE",
+            "valor": "100",
+            "ativo": "EURUSD",
+            "tipo": "binarias",
+            "result": "WIN"
+        },
+        "8": {
+            "conta": "PRACTICE",
+            "valor": "100",
+            "ativo": "EURUSD",
+            "tipo": "binarias",
+            "result": "LOSS"
+        }
+    }
+}

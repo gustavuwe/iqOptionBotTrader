@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operações do Bot</title>
+</head>
+<body>
+  <header>
+    <h1 class="title">Operações do Bot</h1>
+  </header>
+  <div class="custom-select" style="width:200px;">
+    <select>
+      <option value="0">Select Strategie:</option>
+      <option value="1">Martin Gale max 2</option>
+      <option value="2">Martin Gale max 3</option>
+      <option value="3">Martin Gale max 4</option>
+    </select>
+  </div>
+  <div id="dados"></div>
+  <script>
+    fetch('dados')
+        .then(response => response.json())
+        .then(data => {
+        const dadosDiv = document.getElementById('dados');
+        const operacoes = data._default
+
+        for (const operacaoKey in operacoes) {
+          if (operacoes.hasOwnProperty(operacaoKey)) {
+            const operacao = operacoes[operacaoKey];
+            const operacaoDiv = document.createElement('div');
+            operacaoDiv.classList.add('operacao');
+
+            if (operacao.result == "WIN") {
+              const contaSpan = document.createElement('span');
+              contaSpan.textContent = `Conta: ${operacao.conta}`;
+
+              const tipoSpan = document.createElement('span');
+              tipoSpan.textContent = `Tipo: ${operacao.tipo}`;
+
+              const ativoSpan = document.createElement('span');
+              ativoSpan.textContent = `Ativo: ${operacao.ativo}`;
+
+              const valorSpan = document.createElement('span');
+              valorSpan.textContent = `Valor: ${operacao.valor}`;
+
+              const resultSpan = document.createElement('span');
+              valorSpan.textContent = `Resultado: ${operacao.result}`;
+
+              operacaoDiv.appendChild(contaSpan);
+              operacaoDiv.appendChild(tipoSpan);
+              operacaoDiv.appendChild(ativoSpan);
+              operacaoDiv.appendChild(valorSpan);
+              operacaoDiv.appendChild(resultSpan);
+
+              operacaoDiv.style.backgroundColor = "#25692e"
+
+              operacaoDiv.classList.add("operacao")
+
+
+              dadosDiv.appendChild(operacaoDiv);
+            } else {
+              const contaSpan = document.createElement('span');
+              contaSpan.textContent = `Conta: ${operacao.conta}`;
+
+              const tipoSpan = document.createElement('span');
+              tipoSpan.textContent = `Tipo: ${operacao.tipo}`;
+
+              const ativoSpan = document.createElement('span');
+              ativoSpan.textContent = `Ativo: ${operacao.ativo}`;
+
+              const valorSpan = document.createElement('span');
+              valorSpan.textContent = `Valor: ${operacao.valor}`;
+
+              const resultSpan = document.createElement('span');
+              valorSpan.textContent = `Resultado: ${operacao.result}`;
+
+              operacaoDiv.appendChild(contaSpan);
+              operacaoDiv.appendChild(tipoSpan);
+              operacaoDiv.appendChild(ativoSpan);
+              operacaoDiv.appendChild(valorSpan);
+              operacaoDiv.appendChild(resultSpan);
+
+              operacaoDiv.style.backgroundColor = "#800101"
+
+              operacaoDiv.classList.add("operacao");
+
+              dadosDiv.appendChild(operacaoDiv);
+            }
+          }
+        }
+        })
+        .catch(error => console.error('Erro:', error));
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+    * {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+        /* The container must be positioned relative: */
+    .custom-select {
+      position: relative;
+      font-family: Arial;
+    }
+
+    .custom-select select {
+      display: none; /*hide original SELECT element: */
+    }
+
+    .select-selected {
+      background-color: DodgerBlue;
+    }
+
+    /* Style the arrow inside the select element: */
+    .select-selected:after {
+      position: absolute;
+      content: "";
+      top: 14px;
+      right: 10px;
+      width: 0;
+      height: 0;
+      border: 6px solid transparent;
+      border-color: #fff transparent transparent transparent;
+    }
+
+    /* Point the arrow upwards when the select box is open (active): */
+    .select-selected.select-arrow-active:after {
+      border-color: transparent transparent #fff transparent;
+      top: 7px;
+    }
+
+    /* style the items (options), including the selected item: */
+    .select-items div,.select-selected {
+      color: #ffffff;
+      padding: 8px 16px;
+      border: 1px solid transparent;
+      border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+      cursor: pointer;
+    }
+
+    /* Style items (options): */
+    .select-items {
+      position: absolute;
+      background-color: DodgerBlue;
+      top: 100%;
+      left: 0;
+      right: 0;
+      z-index: 99;
+    }
+
+    /* Hide the items when the select box is closed: */
+    .select-hide {
+      display: none;
+    }
+
+    .select-items div:hover, .same-as-selected {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    header {
+      height: 80px;
+      background-color: rgb(40, 40, 53);
+      color: white;
+      text-align: center;
+    }
+
+    .title {
+      padding-top: 15px;
+    }
+
+
+    #dados {
+      position: relative;
+      top: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 0 auto;
+      align-items: center;
+      height: 500px;
+      width: 1100px;
+    }
+
+    .operacao {
+      width: 100%;
+      padding: 15px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      border-bottom: 1.5px solid black;
+      
+    }
+  </style>
+</body>
+</html>
